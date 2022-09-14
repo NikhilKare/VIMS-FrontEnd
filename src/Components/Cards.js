@@ -3,8 +3,9 @@ import './Cards.css';
 import CardItem from './CardItem';
 import { useEffect, useState } from 'react';
 import vimsService from '../Services/VIMSService';
-
-
+import car1 from '../Components/img/car-insurance.jpg';
+import electric from '../Components/img/electric_car.svg';
+import orderRide from '../Components/img/order_ride.svg';
 function Cards() {
   const [policies,setPolicies]=useState([]);
     const init = () => {
@@ -22,51 +23,31 @@ function Cards() {
         init();
       }, []);
   return (
+   
     <div className='cards'>
-      <h1>Check out!</h1>
+      
+      <h1>Check out our Policies!</h1>
+      
       <div className='cards__container'>
         <div className='cards__wrapper'>
+         
+          <div className="container">
+          {/* <h3>List of policies</h3> */}
+          <hr/>
+          
           <ul className='cards__items'>
-            {
-              policies.map(policy=>(
-                <CardItem
-                src='images/img-9.jpg'
-                policy={policy}                
-                path='/services'
-              />
-              ))
-              
-            }
-            
-            {/* <CardItem
-              src='images/img-2.jpg'
+          <img src={electric} alt="car" className='img'></img>
+            <CardItem 
+              src={car1}
               text='Explore'
-              label='Policy2'
-              path='/services'
-            /> */}
+              label='Policies'
+              path='/policies'
+            />
+            <img src={orderRide} alt="car" className='img1'></img>
           </ul>
-          {/* <ul className='cards__items'>
-            <CardItem
-              src='images/img-3.jpg'
-              text='Explore'
-              label='Policy3'
-              path='/services'
-            />
-            <CardItem
-              src='images/img-4.jpg'
-              text='Explore'
-              label='Policy4'
-              path='/products'
-            />
-            <CardItem
-              src='images/img-8.jpg'
-              text='Explore'
-              label='Policy5'
-              path='/sign-up'
-            />
-          </ul> */}
         </div>
       </div>
+    </div>
     </div>
   );
 }

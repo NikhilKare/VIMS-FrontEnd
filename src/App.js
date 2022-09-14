@@ -1,26 +1,30 @@
 
 import './App.css';
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
+import Navbar from './Components/NavBar/Navbar';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import Home from './Components/Pages/Home';
-import Services from './Components/Pages/Services';
-import Products from './Components/Pages/Products';
-import SignUp from './Components/Pages/SignUp';
-import PolicyList from './Components/PolicyList';
+import PolicyList from './Components/Pages/PolicyList';
+import RegisterLogin from './Components/RegisterLogin';
+// import Login from './Components/Login';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
+
   return (
-    <>
+    <>  
     <Router>
-    <Navbar/>
+    {/* <Navbar/> */}
     <Switch>
       <Route path="/" exact component={Home}/>
-      <Route path='/services' component={Services}/>
-      <Route path='/products' component={PolicyList}/>
-      <Route path='/sign-up' component={SignUp}/>
+      {/* <Route path='/services' component={Signup}/> */}
+      <Route path='/policies' component={PolicyList}/>
+      <Route path='/sign-up-in' component={RegisterLogin}/>
     </Switch>
     </Router>
-    
+  
     </>
       
     
